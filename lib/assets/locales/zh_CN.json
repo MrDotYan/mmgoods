@@ -1,0 +1,11 @@
+{
+  "home_page": {
+    "title": "首页",
+    "drawer": {
+      "category":{
+        "title":  "商品分类",
+        "subtitle": "查看商品分类"
+      }
+    }
+  }
+}
