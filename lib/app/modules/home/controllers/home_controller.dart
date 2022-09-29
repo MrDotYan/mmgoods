@@ -1,10 +1,8 @@
-import 'package:appinio_swiper/appinio_swiper.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
-  final AppinioSwiperController appinioSwiperController = AppinioSwiperController();
 
   final count = 0.obs;
   @override
