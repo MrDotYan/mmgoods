@@ -2,7 +2,7 @@ import "package:lottie/lottie.dart";
 import 'package:flutter/material.dart';
 
 class LottieAnimation extends StatelessWidget {
-  const LottieAnimation({super.key, this.type = 'loading'});
+  const LottieAnimation({Key? key, this.type = 'loading'}) : super(key: key);
 
   final String type;
 

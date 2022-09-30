@@ -20,6 +20,7 @@ dependencies:
   lottie: ^1.4.3
   flutter_share: ^2.0.0
   card_swiper: ^2.0.4
+  swipe_deck: ^1.1.0
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
@@ -30,3 +31,4 @@ flutter:
   uses-material-design: true
   assets:
     - lib/assets/lottie/
+    - lib/assets/images/
