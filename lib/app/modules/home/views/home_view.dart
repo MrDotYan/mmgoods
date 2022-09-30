@@ -1,40 +1,23 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:swipe_deck/swipe_deck.dart';
-
 import '../controllers/home_controller.dart';
 import 'drawer.dart';
-
-const IMAGES = [
-  "apex",
-  "cod",
-  "destiny",
-  "fc3",
-  "game_4",
-  "ghost",
-  "mk11",
-  "nfs",
-  "pubg",
-  "mk112"
-];
-final borderRadius = BorderRadius.circular(20.0);
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff5f5f5),
+      backgroundColor: const Color(0xfff5f5f5),
       appBar: AppBar(
-        title: Text('home_page_title'.tr),
-        elevation: 0.0,
-        actions: [
-          IconButton(
-              onPressed: controller.share, icon: const Icon(Icons.share_sharp))
-        ],
-      ),
+          title: Text('home_page_title'.tr),
+          elevation: 0.0,
+          actions: [
+            IconButton(
+                onPressed: controller.share,
+                icon: const Icon(Icons.share_sharp))
+          ]),
       drawer: const Drawer(
         child: DefaultDrawer(),
       ),
@@ -52,191 +35,124 @@ class HomeView extends GetView<HomeController> {
                 viewportFraction: 0.9,
                 scale: 0.95,
                 itemBuilder: (BuildContext context, int index) {
+                  Map item = controller.swiper_data[index];
+                  String url = item['url'];
                   return ClipRRect(
-                    borderRadius: BorderRadius.circular(30.0),
+                    borderRadius: BorderRadius.circular(12.0),
                     child: Image.asset(
-                      "lib/assets/images/9e5ce8e9e2e6f663.jpg",
+                      url,
                       fit: BoxFit.fitHeight,
                     ),
                   );
                 },
-                itemCount: 3,
+                itemCount: controller.swiper_data.length,
                 pagination: const SwiperPagination(),
               ),
             ),
-            SizedBox(
-              height: 520,
-              child: Container(
-                  margin: const EdgeInsets.all(12.0),
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                  ),
-                  child: Column(
-                    children: [
-                      ListTile(
-                        title: const Text("推荐"),
-                        trailing: SizedBox(
-                          width: 200,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              const Text('查看更多'),
-                              IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.arrow_circle_right))
-                            ],
+            Container(
+              padding: const EdgeInsets.all(12.0),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Colors.white),
+              child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: controller.navs_data.length,
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 5,
+                      mainAxisSpacing: 8,
+                      childAspectRatio: 0.75,
+                      crossAxisSpacing: 8),
+                  itemBuilder: (context, int index) {
+                    Map item = controller.navs_data[index];
+                    String url = 'lib/assets/images/nav_ico${index + 1}.png';
+                    return GestureDetector(
+                      onTap: () {},
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: 58,
+                            height: 58,
+                            child: Image.asset(
+                              url,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(item['name'])
+                        ],
                       ),
-                      const SizedBox(
-                        height: 48,
-                      ),
-                      SwipeDeck(
-                        startIndex: 3,
-                        emptyIndicator: const Center(
-                          child: Text("Nothing Here"),
-                        ),
-                        cardSpreadInDegrees:
-                            5, // Change the Spread of Background Cards
-                        onSwipeLeft: () {
-                          print("USER SWIPED LEFT -> GOING TO NEXT WIDGET");
-                        },
-                        onSwipeRight: () {
-                          print(
-                              "USER SWIPED RIGHT -> GOING TO PREVIOUS WIDGET");
-                        },
-                        onChange: (index) {
-                          print(IMAGES[index]);
-                        },
-                        widgets: IMAGES
-                            .map((e) => GestureDetector(
-                                  onTap: () {
-                                    print(e);
-                                  },
-                                  child: ClipRRect(
-                                      borderRadius: borderRadius,
-                                      child: Container(
-                                        color: Colors.white,
-                                        child: Column(
-                                          children: [
-                                            SizedBox(
-                                              width: 208,
-                                              height: 208,
-                                              child: Image.asset(
-                                                "lib/assets/images/$e.jpg",
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                            Container(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Column(
-                                                children: [
-                                                  Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment.end,
-                                                    children: [
-                                                      Text(
-                                                        e,
-                                                        style: const TextStyle(
-                                                            fontSize: 16),
-                                                      ),
-                                                      const SizedBox(
-                                                        width: 10,
-                                                      ),
-                                                      const Text(
-                                                        '¥100.00',
-                                                        style: TextStyle(
-                                                            fontSize: 10,
-                                                            color: Colors
-                                                                .redAccent),
-                                                      )
-                                                    ],
-                                                  )
-                                                ],
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      )),
-                                ))
-                            .toList(),
-                      ),
-                      const SizedBox(
-                        height: 48,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(12),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.star),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.shopping_bag),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.favorite_border),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
-                  )),
+                    );
+                  }),
             ),
-            ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: 100,
-                itemBuilder: (context, int index) {
-                  return Container(
-                    margin: const EdgeInsets.all(12.0),
-                    padding: const EdgeInsets.all(12.0),
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                    ),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(30.0),
-                          child: Image.asset('lib/assets/images/9e5ce8e9e2e6f663.jpg'),
-                        ),
-                        Row(
-                          mainAxisAlignment:
-                          MainAxisAlignment.start,
-                          crossAxisAlignment:
-                          CrossAxisAlignment.end,
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: const EdgeInsets.all(12.0),
+              child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: controller.goods_data.length,
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 8,
+                      childAspectRatio: 0.7,
+                      crossAxisSpacing: 8),
+                  itemBuilder: (context, int index) {
+                    Map item = controller.goods_data[index];
+
+                    return GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(color: Colors.white),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              '$index',
-                              style: const TextStyle(
-                                  fontSize: 16),
+                            SizedBox(
+                              child: Image.asset(
+                                item['img'],
+                                fit: BoxFit.fill,
+                              ),
                             ),
                             const SizedBox(
-                              width: 10,
+                              height: 10,
                             ),
-                            const Text(
-                              '¥100.00',
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors
-                                      .redAccent),
+                            SizedBox(
+                              height: 38,
+                              child: Text(
+                                item['name'],
+                                textAlign: TextAlign.left,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '¥${item['price']}',
+                                  style: TextStyle(color: Colors.red),
+                                ),
+                                SizedBox(width: 20,),
+                                Text(
+                                  '¥${item['vip_price']}',
+                                  style: TextStyle(color: Colors.red),
+                                )
+                              ],
                             )
                           ],
-                        )
-                      ],
-                    ),
-                  );
-                })
+                        ),
+                      ),
+                    );
+                  }),
+            )
           ],
         ),
       ),

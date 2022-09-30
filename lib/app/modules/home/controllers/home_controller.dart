@@ -1,10 +1,17 @@
 import 'package:flutter_share/flutter_share.dart';
 import 'package:get/get.dart';
+import '/app/data/goods_data.dart';
+import '/app/data/nav_data.dart';
+import '/app/data/swiper_data.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
 
   final count = 0.obs;
+
+  final RxList<Map> swiper_data = swiper.obs;
+  final RxList<Map> navs_data = navs.obs;
+  final RxList<Map> goods_data = goodsLists.obs;
   @override
   void onInit() {
     super.onInit();
