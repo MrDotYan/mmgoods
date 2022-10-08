@@ -87,8 +87,8 @@ class HomeView extends GetView<HomeController> {
                     );
                   }),
             ),
-            SizedBox(
-              height: 20,
+           const SizedBox(
+              height: 10,
             ),
             Container(
               padding: const EdgeInsets.all(12.0),
@@ -107,8 +107,8 @@ class HomeView extends GetView<HomeController> {
                     return GestureDetector(
                       onTap: () {},
                       child: Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(color: Colors.white),
+                        padding: const EdgeInsets.all(10),
+                        decoration: const BoxDecoration(color: Colors.white),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -138,12 +138,12 @@ class HomeView extends GetView<HomeController> {
                               children: [
                                 Text(
                                   '¥${item['price']}',
-                                  style: TextStyle(color: Colors.red),
+                                  style: const TextStyle(color: Colors.red),
                                 ),
-                                SizedBox(width: 20,),
+                                const SizedBox(width: 20,),
                                 Text(
                                   '¥${item['vip_price']}',
-                                  style: TextStyle(color: Colors.red),
+                                  style: const TextStyle(color: Color(0xff666666),fontSize: 10),
                                 )
                               ],
                             )
