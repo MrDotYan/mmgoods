@@ -9,14 +9,46 @@ class CartView extends GetView<CartController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xfff5f5f5),
       appBar: AppBar(
-        title: const Text('CartView'),
+        title: const Text('购物车'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'CartView is working',
-          style: TextStyle(fontSize: 20),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: 30,
+                itemBuilder: (context, int index) {
+                  return Container(
+                    color: Colors.white,
+                    margin: const EdgeInsets.only(top: 10),
+                    height: 50,
+                  );
+                }),
+            Column(
+              children: [
+                const ListTile(
+                  title: Text('相似推荐'),
+                  trailing: TextButton(
+                      onPressed:null, child: Text('更多')),
+                ),
+                ListView.builder(
+                  physics:const NeverScrollableScrollPhysics(),
+                  itemCount: 20,
+                  shrinkWrap: true,
+                  itemBuilder: (context, int index) {
+                    return Container(
+                      height: 60,
+                    );
+                  },
+                )
+              ],
+            ),
+          ],
         ),
       ),
     );

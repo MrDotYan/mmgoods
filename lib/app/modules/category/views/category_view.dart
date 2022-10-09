@@ -55,7 +55,7 @@ class CategoryView extends GetView<CategoryController> {
                         children: [
                           ListTile(
                             tileColor: Colors.white,
-                            title: Text(name),
+                            title: Text('二级分类-$name'),
                             trailing: IconButton(
                               icon: const Icon(Icons.more_rounded),
                               onPressed: () {},
