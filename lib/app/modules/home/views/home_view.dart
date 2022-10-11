@@ -102,7 +102,7 @@ class HomeView extends GetView<HomeController> {
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 8,
-                      childAspectRatio: 0.71,
+                      childAspectRatio: 0.70,
                       crossAxisSpacing: 8),
                   itemBuilder: (context, int index) {
                     Map item = controller.goods_data[index];
