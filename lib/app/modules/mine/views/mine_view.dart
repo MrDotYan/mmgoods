@@ -8,17 +8,19 @@ class MineView extends GetView<MineController> {
   const MineView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('MineView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'MineView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+    return  Scaffold(
+      body: CustomScrollView(slivers: <Widget>[
+        SliverAppBar(
+          pinned: true,
+          expandedHeight: 230.0,
+          flexibleSpace: FlexibleSpaceBar(
+            title: Row(children: [Image.asset('lib/assets/images/member.png')],),
+            background: Container(
+              color: Colors.blue,
+            ),
+          ),
+        )
+      ]),
     );
   }
 }

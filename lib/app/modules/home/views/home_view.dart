@@ -50,19 +50,21 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
             Container(
+              margin: const EdgeInsets.all(12),
               padding: const EdgeInsets.all(12.0),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
                   color: Colors.white),
               child: GridView.builder(
+                  padding: EdgeInsets.zero,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: controller.navs_data.length,
                   shrinkWrap: true,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 5,
-                      mainAxisSpacing: 8,
-                      childAspectRatio: 0.75,
-                      crossAxisSpacing: 8),
+                      mainAxisSpacing: 4,
+                      childAspectRatio: 0.80,
+                      crossAxisSpacing: 4),
                   itemBuilder: (context, int index) {
                     Map item = controller.navs_data[index];
                     String url = 'lib/assets/images/nav_ico${index + 1}.png';
@@ -71,8 +73,8 @@ class HomeView extends GetView<HomeController> {
                       child: Column(
                         children: [
                           SizedBox(
-                            width: 58,
-                            height: 58,
+                            width: 46,
+                            height: 46,
                             child: Image.asset(
                               url,
                               fit: BoxFit.cover,
@@ -87,7 +89,7 @@ class HomeView extends GetView<HomeController> {
                     );
                   }),
             ),
-           const SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -96,10 +98,11 @@ class HomeView extends GetView<HomeController> {
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: controller.goods_data.length,
                   shrinkWrap: true,
+                  padding: EdgeInsets.zero,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 8,
-                      childAspectRatio: 0.7,
+                      childAspectRatio: 0.71,
                       crossAxisSpacing: 8),
                   itemBuilder: (context, int index) {
                     Map item = controller.goods_data[index];
@@ -107,8 +110,11 @@ class HomeView extends GetView<HomeController> {
                     return GestureDetector(
                       onTap: () {},
                       child: Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: const BoxDecoration(color: Colors.white),
+                        padding: const EdgeInsets.all(16),
+                        decoration:  BoxDecoration(
+                          borderRadius: BorderRadius.circular(16.0),
+                          color: Colors.white,
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -140,10 +146,13 @@ class HomeView extends GetView<HomeController> {
                                   '¥${item['price']}',
                                   style: const TextStyle(color: Colors.red),
                                 ),
-                                const SizedBox(width: 20,),
+                                const SizedBox(
+                                  width: 20,
+                                ),
                                 Text(
                                   '¥${item['vip_price']}',
-                                  style: const TextStyle(color: Color(0xff666666),fontSize: 10),
+                                  style: const TextStyle(
+                                      color: Color(0xff666666), fontSize: 10),
                                 )
                               ],
                             )
