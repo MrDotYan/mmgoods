@@ -14,6 +14,8 @@ import '../modules/lottie_demo/bindings/lottie_demo_binding.dart';
 import '../modules/lottie_demo/views/lottie_demo_view.dart';
 import '../modules/mine/bindings/mine_binding.dart';
 import '../modules/mine/views/mine_view.dart';
+import '../modules/order/bindings/order_binding.dart';
+import '../modules/order/views/order_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.LOTTIE_DEMO,
       page: () => const LottieDemoView(),
       binding: LottieDemoBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER,
+      page: () => const OrderView(),
+      binding: OrderBinding(),
     ),
   ];
 }

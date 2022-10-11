@@ -11,6 +11,7 @@ abstract class Routes {
   static const REGISTER = _Paths.REGISTER;
   static const DEMO = _Paths.DEMO;
   static const LOTTIE_DEMO = _Paths.LOTTIE_DEMO;
+  static const ORDER = _Paths.ORDER;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const REGISTER = '/register';
   static const DEMO = '/demo';
   static const LOTTIE_DEMO = '/lottie-demo';
+  static const ORDER = '/order';
 }

@@ -26,7 +26,8 @@ class CartView extends GetView<CartController> {
                   String thumb = controller.goods_lists[index]['img'];
                   String title = controller.goods_lists[index]['name'];
                   return Container(
-                    padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 6),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 16, horizontal: 6),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14.0),
                         color: Colors.white),
@@ -35,7 +36,11 @@ class CartView extends GetView<CartController> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Checkbox(value: true, onChanged: (e) {},shape: const CircleBorder(),activeColor:Colors.red),
+                        Checkbox(
+                            value: true,
+                            onChanged: (e) {},
+                            shape: const CircleBorder(),
+                            activeColor: Colors.red),
                         SizedBox(
                           width: 108,
                           height: 108,
@@ -66,7 +71,10 @@ class CartView extends GetView<CartController> {
                                     const EdgeInsets.only(top: 4, bottom: 4),
                                 color: const Color(0xfff5f5f5),
                                 padding: const EdgeInsets.all(4),
-                                child: const Text('金色，256G，5G'),
+                                child: const Text(
+                                  '金色，256G，5G',
+                                  style: TextStyle(fontSize: 10.0),
+                                ),
                               ),
                               Container(
                                 child: Row(
@@ -84,29 +92,39 @@ class CartView extends GetView<CartController> {
                                           GestureDetector(
                                               onTap: () {},
                                               child: Container(
-                                                padding: EdgeInsets.symmetric(vertical: 8,horizontal: 16),
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        vertical: 4,
+                                                        horizontal: 8),
                                                 decoration: BoxDecoration(
                                                   color: Colors.grey[100],
                                                 ),
-                                                child: Icon(
+                                                child: const Icon(
                                                   Icons.exposure_minus_1,
-                                                  size: 18,
+                                                  size: 14,
                                                 ),
                                               )),
                                           Container(
-                                            child: Text('666'),
-                                            padding: EdgeInsets.all(8),
+                                            child: Text(
+                                              '1',
+                                              style: const TextStyle(
+                                                  fontSize: 12.0),
+                                            ),
+                                            padding: const EdgeInsets.all(8),
                                           ),
                                           GestureDetector(
                                               onTap: () {},
                                               child: Container(
-                                                padding: EdgeInsets.symmetric(vertical: 8,horizontal: 16),
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        vertical: 4,
+                                                        horizontal: 8),
                                                 decoration: BoxDecoration(
                                                   color: Colors.grey[100],
                                                 ),
-                                                child: Icon(
+                                                child: const Icon(
                                                   Icons.exposure_plus_1,
-                                                  size: 18,
+                                                  size: 14,
                                                 ),
                                               )),
                                         ],
@@ -154,14 +172,29 @@ class CartView extends GetView<CartController> {
                 children: [
                   Row(
                     children: [
-                      Checkbox(value: true, onChanged: (e) {},shape: const CircleBorder(),activeColor:Colors.red),
+                      Checkbox(
+                          value: true,
+                          onChanged: (e) {},
+                          shape: const CircleBorder(),
+                          activeColor: Colors.red),
                       const Text('全选')
                     ],
                   ),
-                 const  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
-                  const Text('总价：9999.00')
+                  Row(
+                    children: const [
+                      Text('总价：'),
+                      Text(
+                        '￥9999.00',
+                        style: TextStyle(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red),
+                      )
+                    ],
+                  )
                 ],
               ),
               GestureDetector(
