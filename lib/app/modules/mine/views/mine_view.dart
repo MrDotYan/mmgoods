@@ -56,9 +56,8 @@ class MineView extends GetView<MineController> {
                       Container(
                         width: Get.width,
                         margin: const EdgeInsets.symmetric(
-                            vertical: 16, horizontal: 16),
+                            vertical: 16, horizontal: 12),
                         decoration: BoxDecoration(
-                            color: Colors.white,
                             borderRadius: BorderRadius.circular(16.0)),
                         child: Obx(() => GridView.builder(
                             padding: EdgeInsets.zero,
@@ -81,13 +80,19 @@ class MineView extends GetView<MineController> {
                                     Text(
                                       item['number'].toString(),
                                       style: const TextStyle(
+                                          color: Colors.white,
                                           fontSize: 18.0,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     const SizedBox(
                                       height: 10,
                                     ),
-                                    Text(item['title'])
+                                    Text(
+                                      item['title'],
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    )
                                   ],
                                 ),
                               );
@@ -98,7 +103,7 @@ class MineView extends GetView<MineController> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(16.0),
+                margin: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16.0)),
@@ -155,7 +160,7 @@ class MineView extends GetView<MineController> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(16.0),
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
                 child: Row(
                   children: [
                     Expanded(
@@ -237,27 +242,40 @@ class MineView extends GetView<MineController> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(16.0),
+                margin: const EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16.0)),
-                child: ListView.builder(
-                    padding: EdgeInsets.zero,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 10,
-                    itemBuilder: (context, int index) {
-                      return ListTile(
-                        title: Text('菜单$index'),
-                        trailing: GestureDetector(
-                          child: const Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            size: 14.0,
-                          ),
-                          onTap: () {},
-                        ),
-                      );
-                    }),
+                child: Obx(() =>GridView.builder(
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                      mainAxisSpacing: 4,
+                      childAspectRatio: 1,
+                      crossAxisSpacing: 4),
+                  itemCount: controller.helpCenter.value.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    Map item = controller.helpCenter[index];
+                    return GestureDetector(
+                      onTap: () {
+                        if(item['route'] != null) {
+                          Get.toNamed(item['route']);
+                        }
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(item['icon']),
+                          const SizedBox(height: 8,),
+                          Text(item['title'])
+                        ],
+                      ),
+                    );
+                  },
+                )),
               )
             ],
           ),

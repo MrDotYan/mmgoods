@@ -24,6 +24,7 @@ dependencies:
   barcode: ^2.2.3
   flutter_svg: ^1.1.5
   table_calendar: ^3.0.7
+  moment_dart: ^0.10.3
 
 dev_dependencies: 
   flutter_lints: ^2.0.0

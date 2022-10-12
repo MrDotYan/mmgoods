@@ -8,6 +8,8 @@ import '../modules/create_barcode/bindings/create_barcode_binding.dart';
 import '../modules/create_barcode/views/create_barcode_view.dart';
 import '../modules/demo/bindings/demo_binding.dart';
 import '../modules/demo/views/demo_view.dart';
+import '../modules/feedback/bindings/feedback_binding.dart';
+import '../modules/feedback/views/feedback_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -85,6 +87,11 @@ class AppPages {
       name: _Paths.SIGIN,
       page: () => const SiginView(),
       binding: SiginBinding(),
+    ),
+    GetPage(
+      name: _Paths.FEEDBACK,
+      page: () => const FeedbackView(),
+      binding: FeedbackBinding(),
     ),
   ];
 }

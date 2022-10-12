@@ -14,6 +14,7 @@ abstract class Routes {
   static const ORDER = _Paths.ORDER;
   static const CREATE_BARCODE = _Paths.CREATE_BARCODE;
   static const SIGIN = _Paths.SIGIN;
+  static const FEEDBACK = _Paths.FEEDBACK;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const ORDER = '/order';
   static const CREATE_BARCODE = '/create-barcode';
   static const SIGIN = '/sigin';
+  static const FEEDBACK = '/feedback';
 }

@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mmgoods/app/routes/app_pages.dart';
 
 class MineController extends GetxController {
   //TODO: Implement MineController
@@ -17,6 +20,13 @@ class MineController extends GetxController {
     {'number': 1200, 'title': '待收货'},
     {'number': 1200, 'title': '已收货'},
     {'number': 8, 'title': '待评价'}
+  ].obs;
+
+  final RxList<Map> helpCenter = [
+    {'icon':  Icons.mobile_friendly_outlined, 'title': '充话费',},
+    {'icon':  Icons.edit_calendar_outlined, 'title': '问题反馈','route':Routes.FEEDBACK},
+    {'icon':  Icons.person_pin_rounded, 'title': '联系客服'},
+    {'icon':  Icons.more_horiz_outlined, 'title': '更多'},
   ].obs;
   @override
   void onInit() {
