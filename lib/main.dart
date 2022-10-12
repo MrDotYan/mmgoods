@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 import 'package:get/get.dart';
 
@@ -8,7 +9,7 @@ import 'app/routes/app_pages.dart';
 import 'generated/locales.g.dart';
 
 void main() {
-  runApp(const MyApp());
+  initializeDateFormatting().then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
                 appBarTheme: const AppBarTheme(
+                  backgroundColor: Color(0xeeff4e17),
                     systemOverlayStyle: SystemUiOverlayStyle(
                         statusBarColor: Colors.transparent))),
             translationsKeys: AppTranslation.translations,

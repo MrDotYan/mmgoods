@@ -15,6 +15,7 @@ class OrderView extends GetView<OrderController> {
               title: const Text('我的订单'),
               centerTitle: true,
               bottom: TabBar(
+                indicatorColor: Colors.white,
                   onTap: controller.tabOnTap,
                   tabs: controller.tab.value.map((element) {
                     return Tab(text: element['title']);
@@ -27,7 +28,7 @@ class OrderView extends GetView<OrderController> {
                       itemCount: 30,
                       itemBuilder: (context, int index) {
                         return Container(
-                          margin: EdgeInsets.all(16.0),
+                          margin: const EdgeInsets.all(16.0),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(16.0)),
@@ -50,12 +51,12 @@ class OrderView extends GetView<OrderController> {
                                     )
                                   ],
                                 ),
-                                trailing: Text('待付款',
+                                trailing: const Text('待付款',
                                     style: TextStyle(
                                         fontSize: 12.0, color: Colors.red)),
                               ),
                               Container(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     left: 16.0, right: 16.0, bottom: 16.0),
                                 child: Row(
                                   children: [
@@ -69,7 +70,7 @@ class OrderView extends GetView<OrderController> {
                                             'lib/assets/images/goods_thumb_01.png'),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 20.0,
                                     ),
                                     Expanded(
@@ -80,19 +81,19 @@ class OrderView extends GetView<OrderController> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text(
+                                          const Text(
                                             '薇妮(Viney)时尚包包女包牛皮单肩包女休闲百搭斜挎包韩版小方包潮(枪色)',
                                             maxLines: 2,
                                             overflow: TextOverflow.ellipsis,
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 10.0,
                                           ),
                                           Container(
                                             color: Colors.grey[100],
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Row(
-                                              children: [
+                                              children: const [
                                                 Text(
                                                   '白色，鳄鱼皮，典藏版 ',
                                                   maxLines: 1,
@@ -109,7 +110,7 @@ class OrderView extends GetView<OrderController> {
                                               ],
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 10.0,
                                           ),
                                           Row(
@@ -117,7 +118,7 @@ class OrderView extends GetView<OrderController> {
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.end,
-                                            children: [
+                                            children: const [
                                               Text(
                                                 '￥',
                                                 style: TextStyle(
@@ -158,18 +159,18 @@ class OrderView extends GetView<OrderController> {
                                                 BorderRadius.circular(18.0),
                                           ))),
                                       onPressed: () {},
-                                      child: Text('取消订单',style: TextStyle(color: Colors.grey,fontSize: 12),)),
-                                  SizedBox(width: 10.0),
+                                      child: const Text('取消订单',style: TextStyle(color: Colors.grey,fontSize: 12),)),
+                                  const SizedBox(width: 10.0),
                                   OutlinedButton(
                                       style: ButtonStyle(
-                                        side: MaterialStateProperty.all(BorderSide(color: Colors.red)),
+                                        side: MaterialStateProperty.all(const BorderSide(color: Colors.red)),
                                           shape: MaterialStateProperty.all(
                                               RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(18.0),
                                       ))),
                                       onPressed: () {},
-                                      child: Text('评价',style: TextStyle(color: Colors.red,fontSize: 12),))
+                                      child: const Text('评价',style: TextStyle(color: Colors.red,fontSize: 12),))
                                 ],
                               )
                             ],

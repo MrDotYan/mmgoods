@@ -12,23 +12,23 @@ class MineView extends GetView<MineController> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Color(0xeeff4e17),
+        backgroundColor: const Color(0xeeff4e17),
         centerTitle: false,
         title: const Text('个人中心'),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.message))
+          IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.message))
         ],
       ),
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Container(
           color: Colors.grey[100],
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.only(top: 30.0),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.only(top: 30.0),
+                decoration: const BoxDecoration(
                     color: Color(0xeeff4e17),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(16),
@@ -44,8 +44,8 @@ class MineView extends GetView<MineController> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.symmetric(vertical: 16.0),
-                        child: Text(
+                        margin: const EdgeInsets.symmetric(vertical: 16.0),
+                        child: const Text(
                           'MrDotYan',
                           style: TextStyle(
                               color: Colors.white,
@@ -160,66 +160,76 @@ class MineView extends GetView<MineController> {
                   children: [
                     Expanded(
                       flex: 1,
-                      child: Container(
-                        height: 100,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(16.0)),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [
-                                  Icon(Icons.calendar_month),
-                                  SizedBox(width: 8),
-                                  Text('签到')
-                                ]),
-                            SizedBox(height: 10),
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [
-                                  Text('每日签到'),
-                                  SizedBox(width: 10),
-                                  Text('领取积分')
-                                ])
-                          ],
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.toNamed(Routes.SIGIN);
+                        },
+                        child: Container(
+                          height: 100,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16.0)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: const [
+                                    Icon(Icons.calendar_month),
+                                    SizedBox(width: 8),
+                                    Text('签到')
+                                  ]),
+                              SizedBox(height: 10),
+                              Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: const [
+                                    Text('每日签到'),
+                                    SizedBox(width: 10),
+                                    Text('领取积分')
+                                  ])
+                            ],
+                          ),
                         ),
                       ),
                     ),
                     SizedBox(width: 20),
                     Expanded(
                       flex: 1,
-                      child: Container(
-                        height: 100,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(16.0)),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [
-                                  Icon(Icons.qr_code),
-                                  SizedBox(width: 8),
-                                  Text('付款码')
-                                ]),
-                            SizedBox(height: 10),
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [
-                                  Text('到店扫码'),
-                                  SizedBox(width: 10),
-                                  Text('快捷付款')
-                                ])
-                          ],
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.toNamed(Routes.CREATE_BARCODE);
+                        },
+                        child: Container(
+                          height: 100,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16.0)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: const [
+                                    Icon(Icons.qr_code),
+                                    SizedBox(width: 8),
+                                    Text('付款码')
+                                  ]),
+                              SizedBox(height: 10),
+                              Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: const [
+                                    Text('到店扫码'),
+                                    SizedBox(width: 10),
+                                    Text('快捷付款')
+                                  ])
+                            ],
+                          ),
                         ),
                       ),
                     )

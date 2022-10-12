@@ -12,6 +12,8 @@ abstract class Routes {
   static const DEMO = _Paths.DEMO;
   static const LOTTIE_DEMO = _Paths.LOTTIE_DEMO;
   static const ORDER = _Paths.ORDER;
+  static const CREATE_BARCODE = _Paths.CREATE_BARCODE;
+  static const SIGIN = _Paths.SIGIN;
 }
 
 abstract class _Paths {
@@ -25,4 +27,6 @@ abstract class _Paths {
   static const DEMO = '/demo';
   static const LOTTIE_DEMO = '/lottie-demo';
   static const ORDER = '/order';
+  static const CREATE_BARCODE = '/create-barcode';
+  static const SIGIN = '/sigin';
 }

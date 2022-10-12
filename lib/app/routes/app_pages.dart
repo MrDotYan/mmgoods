@@ -4,6 +4,8 @@ import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
 import '../modules/category/bindings/category_binding.dart';
 import '../modules/category/views/category_view.dart';
+import '../modules/create_barcode/bindings/create_barcode_binding.dart';
+import '../modules/create_barcode/views/create_barcode_view.dart';
 import '../modules/demo/bindings/demo_binding.dart';
 import '../modules/demo/views/demo_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -18,6 +20,8 @@ import '../modules/order/bindings/order_binding.dart';
 import '../modules/order/views/order_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
+import '../modules/sigin/bindings/sigin_binding.dart';
+import '../modules/sigin/views/sigin_view.dart';
 
 part 'app_routes.dart';
 
@@ -71,6 +75,16 @@ class AppPages {
       name: _Paths.ORDER,
       page: () => const OrderView(),
       binding: OrderBinding(),
+    ),
+    GetPage(
+      name: _Paths.CREATE_BARCODE,
+      page: () => const CreateBarcodeView(),
+      binding: CreateBarcodeBinding(),
+    ),
+    GetPage(
+      name: _Paths.SIGIN,
+      page: () => const SiginView(),
+      binding: SiginBinding(),
     ),
   ];
 }
