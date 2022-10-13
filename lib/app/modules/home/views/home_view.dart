@@ -120,9 +120,12 @@ class HomeView extends GetView<HomeController> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             SizedBox(
-                              child: Image.asset(
-                                item['img'],
-                                fit: BoxFit.fill,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12.0),
+                                child: Image.asset(
+                                  item['img'],
+                                  fit: BoxFit.fill,
+                                ),
                               ),
                             ),
                             const SizedBox(

@@ -16,6 +16,9 @@ abstract class Routes {
   static const SIGIN = _Paths.SIGIN;
   static const FEEDBACK = _Paths.FEEDBACK;
   static const SETTING = _Paths.SETTING;
+  static const SEARCH = _Paths.SEARCH;
+  static const MESSAGE = _Paths.MESSAGE;
+  static const COUPON = _Paths.COUPON;
 }
 
 abstract class _Paths {
@@ -33,4 +36,7 @@ abstract class _Paths {
   static const SIGIN = '/sigin';
   static const FEEDBACK = '/feedback';
   static const SETTING = '/setting';
+  static const SEARCH = '/search';
+  static const MESSAGE = '/message';
+  static const COUPON = '/coupon';
 }

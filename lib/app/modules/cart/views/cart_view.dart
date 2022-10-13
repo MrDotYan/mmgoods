@@ -44,9 +44,12 @@ class CartView extends GetView<CartController> {
                         SizedBox(
                           width: 108,
                           height: 108,
-                          child: Image.asset(
-                            thumb,
-                            fit: BoxFit.cover,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12.0),
+                            child:Image.asset(
+                              thumb,
+                              fit: BoxFit.cover,
+                            )
                           ),
                         ),
                         const SizedBox(

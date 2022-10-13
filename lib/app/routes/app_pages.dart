@@ -4,6 +4,8 @@ import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
 import '../modules/category/bindings/category_binding.dart';
 import '../modules/category/views/category_view.dart';
+import '../modules/coupon/bindings/coupon_binding.dart';
+import '../modules/coupon/views/coupon_view.dart';
 import '../modules/create_barcode/bindings/create_barcode_binding.dart';
 import '../modules/create_barcode/views/create_barcode_view.dart';
 import '../modules/demo/bindings/demo_binding.dart';
@@ -16,12 +18,16 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/lottie_demo/bindings/lottie_demo_binding.dart';
 import '../modules/lottie_demo/views/lottie_demo_view.dart';
+import '../modules/message/bindings/message_binding.dart';
+import '../modules/message/views/message_view.dart';
 import '../modules/mine/bindings/mine_binding.dart';
 import '../modules/mine/views/mine_view.dart';
 import '../modules/order/bindings/order_binding.dart';
 import '../modules/order/views/order_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
+import '../modules/search/bindings/search_binding.dart';
+import '../modules/search/views/search_view.dart';
 import '../modules/setting/bindings/setting_binding.dart';
 import '../modules/setting/views/setting_view.dart';
 import '../modules/sigin/bindings/sigin_binding.dart';
@@ -99,6 +105,21 @@ class AppPages {
       name: _Paths.SETTING,
       page: () => const SettingView(),
       binding: SettingBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEARCH,
+      page: () => const SearchView(),
+      binding: SearchBinding(),
+    ),
+    GetPage(
+      name: _Paths.MESSAGE,
+      page: () => const MessageView(),
+      binding: MessageBinding(),
+    ),
+    GetPage(
+      name: _Paths.COUPON,
+      page: () => const CouponView(),
+      binding: CouponBinding(),
     ),
   ];
 }

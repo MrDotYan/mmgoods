@@ -16,8 +16,16 @@ class MineView extends GetView<MineController> {
         centerTitle: false,
         title: const Text('个人中心'),
         actions: [
-          IconButton(onPressed: () {Get.toNamed(Routes.SETTING);}, icon: const Icon(Icons.settings)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.message))
+          IconButton(
+              onPressed: () {
+                Get.toNamed(Routes.SETTING);
+              },
+              icon: const Icon(Icons.settings)),
+          IconButton(
+              onPressed: () {
+                Get.toNamed(Routes.MESSAGE);
+              },
+              icon: const Icon(Icons.message))
         ],
       ),
       body: SingleChildScrollView(
@@ -72,30 +80,38 @@ class MineView extends GetView<MineController> {
                             itemCount: controller.menus.length,
                             itemBuilder: (context, int index) {
                               Map item = controller.menus[index];
-                              return Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      item['number'].toString(),
-                                      style: const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18.0,
-                                          fontWeight: FontWeight.bold),
+                              return GestureDetector(
+                                  onTap: () {
+                                    if (item['route'] != null) {
+                                      Get.toNamed(item['route']);
+                                    }
+                                  },
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          item['number'].toString(),
+                                          style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18.0,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          item['title'],
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                          ),
+                                        )
+                                      ],
                                     ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    Text(
-                                      item['title'],
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              );
+                                  ));
                             })),
                       ),
                     ],
@@ -246,36 +262,39 @@ class MineView extends GetView<MineController> {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16.0)),
-                child: Obx(() =>GridView.builder(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4,
-                      mainAxisSpacing: 4,
-                      childAspectRatio: 1,
-                      crossAxisSpacing: 4),
-                  itemCount: controller.helpCenter.value.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    Map item = controller.helpCenter[index];
-                    return GestureDetector(
-                      onTap: () {
-                        if(item['route'] != null) {
-                          Get.toNamed(item['route']);
-                        }
+                child: Obx(() => GridView.builder(
+                      padding: EdgeInsets.zero,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 4,
+                              mainAxisSpacing: 4,
+                              childAspectRatio: 1,
+                              crossAxisSpacing: 4),
+                      itemCount: controller.helpCenter.value.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        Map item = controller.helpCenter[index];
+                        return GestureDetector(
+                          onTap: () {
+                            if (item['route'] != null) {
+                              Get.toNamed(item['route']);
+                            }
+                          },
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(item['icon']),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              Text(item['title'])
+                            ],
+                          ),
+                        );
                       },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(item['icon']),
-                          const SizedBox(height: 8,),
-                          Text(item['title'])
-                        ],
-                      ),
-                    );
-                  },
-                )),
+                    )),
               )
             ],
           ),

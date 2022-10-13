@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/category_controller.dart';
 
 class CategoryView extends GetView<CategoryController> {
@@ -16,7 +17,9 @@ class CategoryView extends GetView<CategoryController> {
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed(Routes.SEARCH);
+            },
           ),
         ],
       ),
@@ -30,6 +33,7 @@ class CategoryView extends GetView<CategoryController> {
                 color: Color(0xfff5f5f5),
                 height: Get.height,
                 child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: controller.navs_data.length,
                     itemBuilder: (context, int index) {
@@ -65,6 +69,7 @@ class CategoryView extends GetView<CategoryController> {
                 height: Get.height,
                 color: Color(0xfff5f5f5),
                 child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: 3,
                     itemBuilder: (context, int index) {
@@ -77,9 +82,9 @@ class CategoryView extends GetView<CategoryController> {
                           children: [
                             ListTile(
                               tileColor: Colors.white,
-                              title: Text('二级分类'),
+                              title: Text('二级分类$index'),
                               trailing: IconButton(
-                                icon: const Icon(Icons.more_rounded),
+                                icon: const Icon(Icons.arrow_forward_ios_rounded,size: 14,),
                                 onPressed: () {},
                               ),
                             ),
@@ -92,7 +97,7 @@ class CategoryView extends GetView<CategoryController> {
                                     const SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 3,
                                         mainAxisSpacing: 8,
-                                        childAspectRatio: 1,
+                                        childAspectRatio: 0.8,
                                         crossAxisSpacing: 8),
                                 itemBuilder: (context, int index) {
                                   Map item = controller.navs_data[index];
@@ -103,11 +108,14 @@ class CategoryView extends GetView<CategoryController> {
                                     child: Column(
                                       children: [
                                         SizedBox(
-                                          width: 48,
-                                          height: 48,
-                                          child: Image.asset(
-                                            url,
-                                            fit: BoxFit.cover,
+                                          width: 58,
+                                          height: 58,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(8),
+                                            child: Image.asset(
+                                              url,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                         const SizedBox(
