@@ -16,7 +16,7 @@ class MineView extends GetView<MineController> {
         centerTitle: false,
         title: const Text('个人中心'),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
+          IconButton(onPressed: () {Get.toNamed(Routes.SETTING);}, icon: const Icon(Icons.settings)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.message))
         ],
       ),

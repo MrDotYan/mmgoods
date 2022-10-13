@@ -66,7 +66,7 @@ class CategoryView extends GetView<CategoryController> {
                 color: Color(0xfff5f5f5),
                 child: ListView.builder(
                     shrinkWrap: true,
-                    itemCount: 1,
+                    itemCount: 3,
                     itemBuilder: (context, int index) {
                       return Container(
                         margin: EdgeInsets.all(12),
@@ -96,8 +96,8 @@ class CategoryView extends GetView<CategoryController> {
                                         crossAxisSpacing: 8),
                                 itemBuilder: (context, int index) {
                                   Map item = controller.navs_data[index];
-                                  String url =
-                                      'lib/assets/images/nav_ico${index + 1}.png';
+                                  String url = index >= 9 ? 'lib/assets/images/goods_thumb_${index + 1}.png' :
+                                      'lib/assets/images/goods_thumb_0${index + 1}.png';
                                   return GestureDetector(
                                     onTap: () {},
                                     child: Column(

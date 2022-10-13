@@ -22,6 +22,8 @@ import '../modules/order/bindings/order_binding.dart';
 import '../modules/order/views/order_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
+import '../modules/setting/bindings/setting_binding.dart';
+import '../modules/setting/views/setting_view.dart';
 import '../modules/sigin/bindings/sigin_binding.dart';
 import '../modules/sigin/views/sigin_view.dart';
 
@@ -92,6 +94,11 @@ class AppPages {
       name: _Paths.FEEDBACK,
       page: () => const FeedbackView(),
       binding: FeedbackBinding(),
+    ),
+    GetPage(
+      name: _Paths.SETTING,
+      page: () => const SettingView(),
+      binding: SettingBinding(),
     ),
   ];
 }
