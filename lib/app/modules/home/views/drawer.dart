@@ -23,19 +23,19 @@ class DefaultDrawer extends StatelessWidget {
       children: [
         Container(
           height: Get.mediaQuery.padding.top,
-          color:const Color(0xfff5f5f5),
+          color: const Color(0xeeff4e17),
         ),
         Container(
           height: 108.0,
-          color:const Color(0xfff5f5f5),
+          color: const Color(0xeeff4e17),
           padding: const EdgeInsets.all(14.0),
           child: Row(
             children: [
-              const SizedBox(
-                width: 88.0,
-                height: 88.0,
-                child: CircleAvatar(
-                  child: Text("M"),
+              SizedBox(
+                width: 80.0,
+                height: 80.0,
+                child: ClipOval(
+                  child: Image.asset('lib/assets/images/user_pic.jpg'),
                 ),
               ),
               const SizedBox(width: 10.0),
@@ -46,12 +46,17 @@ class DefaultDrawer extends StatelessWidget {
                 children: [
                   const Text(
                     'MrDotYan',
-                    style:
-                        TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                   Container(
                     margin: const EdgeInsets.only(top: 12.0),
-                    child: const Text('449107144@qq.com'),
+                    child: const Text(
+                      '449107144@qq.com',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                   Container(
                     margin: const EdgeInsets.only(top: 6.0),
@@ -59,7 +64,7 @@ class DefaultDrawer extends StatelessWidget {
                       "这个人很懒，什么也没留下",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
-                      style: TextStyle(fontSize: 12.0),
+                      style: TextStyle(fontSize: 12.0, color: Colors.white),
                     ),
                   )
                 ],
