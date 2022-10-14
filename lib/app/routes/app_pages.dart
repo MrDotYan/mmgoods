@@ -4,6 +4,8 @@ import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
 import '../modules/category/bindings/category_binding.dart';
 import '../modules/category/views/category_view.dart';
+import '../modules/collection/bindings/collection_binding.dart';
+import '../modules/collection/views/collection_view.dart';
 import '../modules/coupon/bindings/coupon_binding.dart';
 import '../modules/coupon/views/coupon_view.dart';
 import '../modules/create_barcode/bindings/create_barcode_binding.dart';
@@ -24,6 +26,8 @@ import '../modules/mine/bindings/mine_binding.dart';
 import '../modules/mine/views/mine_view.dart';
 import '../modules/order/bindings/order_binding.dart';
 import '../modules/order/views/order_view.dart';
+import '../modules/payment_mobile/bindings/payment_mobile_binding.dart';
+import '../modules/payment_mobile/views/payment_mobile_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
 import '../modules/search/bindings/search_binding.dart';
@@ -120,6 +124,16 @@ class AppPages {
       name: _Paths.COUPON,
       page: () => const CouponView(),
       binding: CouponBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAYMENT_MOBILE,
+      page: () => const PaymentMobileView(),
+      binding: PaymentMobileBinding(),
+    ),
+    GetPage(
+      name: _Paths.COLLECTION,
+      page: () => const CollectionView(),
+      binding: CollectionBinding(),
     ),
   ];
 }

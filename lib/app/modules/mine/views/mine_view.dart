@@ -119,7 +119,7 @@ class MineView extends GetView<MineController> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
+                margin:const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16.0)),
@@ -146,7 +146,7 @@ class MineView extends GetView<MineController> {
                               onTap: () {
                                 Get.toNamed(Routes.ORDER);
                               },
-                              child: Container(
+                              child: SizedBox(
                                 width: 100,
                                 height: 100,
                                 child: Center(
@@ -176,7 +176,7 @@ class MineView extends GetView<MineController> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
+                margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 16.0),
                 child: Row(
                   children: [
                     Expanded(

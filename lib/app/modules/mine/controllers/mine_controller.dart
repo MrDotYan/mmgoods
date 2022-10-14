@@ -9,9 +9,9 @@ class MineController extends GetxController {
   final count = 0.obs;
 
   final RxList<Map> menus = [
-    {'number': 1200, 'title': '积分'},
+    {'number': 1200, 'title': '积分','route':Routes.SIGIN},
     {'number': 1200, 'title': '钱包'},
-    {'number': 80, 'title': '收藏'},
+    {'number': 80, 'title': '收藏','route':Routes.COLLECTION},
     {'number': 8, 'title': '优惠卷', "route": Routes.COUPON}
   ].obs;
 
@@ -26,6 +26,7 @@ class MineController extends GetxController {
     {
       'icon': Icons.mobile_friendly_outlined,
       'title': '充话费',
+      'route':Routes.PAYMENT_MOBILE
     },
     {
       'icon': Icons.edit_calendar_outlined,
