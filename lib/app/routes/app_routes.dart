@@ -21,6 +21,7 @@ abstract class Routes {
   static const COUPON = _Paths.COUPON;
   static const PAYMENT_MOBILE = _Paths.PAYMENT_MOBILE;
   static const COLLECTION = _Paths.COLLECTION;
+  static const CATEGORIES = _Paths.CATEGORIES;
 }
 
 abstract class _Paths {
@@ -43,4 +44,5 @@ abstract class _Paths {
   static const COUPON = '/coupon';
   static const PAYMENT_MOBILE = '/payment-mobile';
   static const COLLECTION = '/collection';
+  static const CATEGORIES = '/categories';
 }

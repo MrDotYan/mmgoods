@@ -85,7 +85,7 @@ class CategoryView extends GetView<CategoryController> {
                               title: Text('二级分类$index'),
                               trailing: IconButton(
                                 icon: const Icon(Icons.arrow_forward_ios_rounded,size: 14,),
-                                onPressed: () {},
+                                onPressed: () {Get.toNamed(Routes.CATEGORIES);},
                               ),
                             ),
                             GridView.builder(

@@ -33,6 +33,7 @@ class PaymentMobileView extends GetView<PaymentMobileController> {
             ),
             GridView.builder(
                 physics: const NeverScrollableScrollPhysics(),
+                padding: EdgeInsets.zero,
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,
@@ -63,6 +64,7 @@ class PaymentMobileView extends GetView<PaymentMobileController> {
                           )));
                 }),
             Container(
+              margin: const EdgeInsets.only(top: 16.0),
               padding:
               const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
               decoration: BoxDecoration(
