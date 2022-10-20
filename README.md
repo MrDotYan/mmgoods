@@ -2,18 +2,24 @@
 
 A new Flutter project.
 
-## Getting Started
+## 界面展示
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[](./preview/1.jpg)
+[](./preview/2.jpg)
+[](./preview/3.jpg)
+[](./preview/4.jpg)
+[](./preview/5.jpg)
+[](./preview/6.jpg)
+[](./preview/7.jpg)
+[](./preview/8.jpg)
+[](./preview/9.jpg)
+[](./preview/10.jpg)
+[](./preview/11.jpg)
+[](./preview/12.jpg)
+[](./preview/13.jpg)
+[](./preview/14.jpg)
+[](./preview/15.jpg)
+[](./preview/16.jpg)
 
 
 ## 生成语言文件
