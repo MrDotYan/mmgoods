@@ -4,24 +4,22 @@ A new Flutter project.
 
 ## 界面展示
 
-[1](./preview/1.jpg)
-[2](./preview/2.jpg)
-[3](/preview/3.jpg)
-[4](/preview/4.jpg)
-[](/preview/5.jpg)
-[](/preview/6.jpg)
-[](/preview/7.jpg)
-[](/preview/8.jpg)
-[](/preview/9.jpg)
-[](/preview/10.jpg)
-[](/preview/11.jpg)
-[](/preview/12.jpg)
-[](/preview/13.jpg)
-[](/preview/14.jpg)
-[](/preview/15.jpg)
-[](/preview/16.jpg)
-
-<img src='./preview/1.jpg' />
+<img src='./preview/1.jpg' alt='1'/>
+<img src='./preview/2.jpg' alt='2'/>
+<img src='./preview/3.jpg' alt='3'/>
+<img src='./preview/4.jpg' alt='4'/>
+<img src='./preview/5.jpg' alt='5'/>
+<img src='./preview/6.jpg' alt='6'/>
+<img src='./preview/7.jpg' alt='7'/>
+<img src='./preview/8.jpg' alt='8'/>
+<img src='./preview/9.jpg' alt='9'/>
+<img src='./preview/10.jpg' alt='10'/>
+<img src='./preview/11.jpg' alt='11'/>
+<img src='./preview/12.jpg' alt='12'/>
+<img src='./preview/13.jpg' alt='13'/>
+<img src='./preview/14.jpg' alt='14'/>
+<img src='./preview/15.jpg' alt='15'/>
+<img src='./preview/16.jpg' alt='16'/>
 
 
 ## 生成语言文件
