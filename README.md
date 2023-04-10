@@ -4,10 +4,10 @@ A new Flutter project.
 
 ## 界面展示
 
-[](/preview/1.jpg)
-[](/preview/2.jpg)
-[](/preview/3.jpg)
-[](/preview/4.jpg)
+[1](./preview/1.jpg)
+[2](./preview/2.jpg)
+[3](/preview/3.jpg)
+[4](/preview/4.jpg)
 [](/preview/5.jpg)
 [](/preview/6.jpg)
 [](/preview/7.jpg)
