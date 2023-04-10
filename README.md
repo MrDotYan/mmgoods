@@ -21,6 +21,8 @@ A new Flutter project.
 [](/preview/15.jpg)
 [](/preview/16.jpg)
 
+<img src='./preview/1.jpg' />
+
 
 ## 生成语言文件
 
